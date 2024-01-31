@@ -1,0 +1,5 @@
+package chap07.sec02.exam04;
+
+public class Parent {
+
+}
