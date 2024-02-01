@@ -18,7 +18,6 @@ public class TryCatchEx {
 		try {
 			Connection conn = DriverManager.getConnection(null);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

@@ -8,9 +8,7 @@ public class NumberFormatExceptionEx {
 			System.out.println(x);
 
 		} catch (NumberFormatException e) {
-			System.out.println("숫자 반환 불가");
+			System.out.println(e.getMessage());
 		}
-
 	}
-
 }

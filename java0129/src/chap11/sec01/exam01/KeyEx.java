@@ -11,7 +11,5 @@ public class KeyEx {
 		
 		String value = hashMap.get(new Key(1));
 		System.out.println(value);
-
 	}
-
 }

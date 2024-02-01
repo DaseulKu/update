@@ -1,8 +1,10 @@
 package chap10.sec01.exam01;
 
-class MyClass{
-	void method() {}
+class MyClass {
+	void method() {
+	}
 }
+
 public class NullPointException {
 
 	public static void main(String[] args) {
@@ -11,7 +13,5 @@ public class NullPointException {
 //		mc.method();
 		String data = null;
 		System.out.println(data.toString());
-
 	}
-
 }

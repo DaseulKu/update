@@ -171,7 +171,7 @@ public class EmpData implements DBOperations {
 		String job = scanner.nextLine();
 		System.out.print("사수번호: ");
 		int mgr = Integer.parseInt(scanner.nextLine());
-		System.out.print("입사일: ");
+		System.out.print("입사일 yyyy-mm-dd: ");
 		String hiredate = scanner.nextLine();
 		System.out.print("월급: ");
 		double sal = Double.parseDouble(scanner.nextLine());
@@ -235,7 +235,7 @@ public class EmpData implements DBOperations {
 
 	@Override
 	public void deleteData(Connection connection, Scanner scanner) {
-		System.out.print("삭제할 사원명을 입력하세요");
+		System.out.print("삭제할 사원이름을 입력하세요");
 		String deletename = scanner.nextLine();
 		String sql = "delete from emp where ename = '" + deletename + "'";
 		try (Statement stmt = connection.createStatement()) {
@@ -287,8 +287,7 @@ public class EmpData implements DBOperations {
 				}
 			}
 		} catch (SQLException | ClassNotFoundException e) {
-			e.printStackTrace();
-			System.out.println("DB 연결 중 오류가 발생했습니다");
+			System.out.println("데이터베이스 연결 중 오류가 발생했습니다");
 		}
 	}
 }

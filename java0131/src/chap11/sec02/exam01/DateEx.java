@@ -22,5 +22,4 @@ public class DateEx {
 		System.out.println(date2);
 
 	}
-
 }

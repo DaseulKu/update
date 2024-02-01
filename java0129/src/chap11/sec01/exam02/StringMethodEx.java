@@ -3,7 +3,6 @@ package chap11.sec01.exam02;
 import java.io.UnsupportedEncodingException;
 
 public class StringMethodEx {
-
 	public static void main(String[] args) {
 		// String 메소드 문자추출 charAt()
 		String sub = "자바 프로그래밍";

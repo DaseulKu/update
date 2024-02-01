@@ -20,5 +20,4 @@ public class ObjEx {
 		boolean result2 = (obj1==obj2);
 		System.out.println(result2);
 	}
-
 }

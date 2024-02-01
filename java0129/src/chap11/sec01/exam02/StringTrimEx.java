@@ -12,5 +12,4 @@ public class StringTrimEx {
 		String str1 = String.valueOf(10); // 10+"";
 		System.out.println(str1+30);
 	}
-
 }
