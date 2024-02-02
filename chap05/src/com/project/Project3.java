@@ -2,7 +2,7 @@ package com.project;
 
 import java.util.Scanner;
 
-public class Project1 {
+public class Project3 {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);

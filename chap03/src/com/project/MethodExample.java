@@ -1,4 +1,4 @@
-package com.proj;
+package com.project;
 
 public class MethodExample {
 //return

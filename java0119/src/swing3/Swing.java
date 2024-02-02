@@ -1,4 +1,4 @@
-package swing.myproject2;
+package swing3;
 
 import java.awt.Container;
 import java.awt.FlowLayout;

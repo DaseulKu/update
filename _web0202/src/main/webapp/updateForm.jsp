@@ -15,11 +15,12 @@
 String driver = "oracle.jdbc.driver.OracleDriver";
 String url = "jdbc:oracle:thin:@localhost:1521:xe";
 Class.forName(driver);
-String sql = "select name,kor,eng,math from score where num = ?";
+String sql = "select num,name,kor,eng,math from score where num = ?";
 	try (Connection conn = DriverManager.getConnection(url, "scott", "tiger");
 		PreparedStatement pstmt = conn.prepareStatement(sql);
-		ResultSet rs = pstmt.executeQuery();) {
+			) {
 		pstmt.setInt(1,Integer.parseInt(request.getParameter("num")));
+		ResultSet rs = pstmt.executeQuery();
 		int num = 0;
 		String name = "";
 		int kor = 0;
@@ -34,11 +35,11 @@ String sql = "select name,kor,eng,math from score where num = ?";
 		}%>
 <a href="list.jsp">사원목록</a>
 <form action="update.jsp">
-번호 <input type="text" name="num" value=<%=num%> /><br/>
+번호 <input type="text" name="num" value="<%=num%>" /><br/>
 이름 <input type="text" name="name" value="<%=name%>"/><br/>
-국어 <input type="text" name="kor" value=<%=kor%>/><br/>
-영어 <input type="text" name="eng" value=<%=eng%>/><br/>
-수학 <input type="text" name="math" value=<%=math%>/><br/>
+국어 <input type="text" name="kor" value="<%=kor%>"/><br/>
+영어 <input type="text" name="eng" value="<%=eng%>"/><br/>
+수학 <input type="text" name="math" value="<%=math%>"/><br/>
 <input type="submit" value="확인"/>
 <input type="reset"/>
 </form>

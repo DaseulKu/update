@@ -29,6 +29,7 @@ String sql = "update score set math = ?, eng = ?, kor = ?, name = ? where num = 
 	}catch (Exception e) {
 		e.printStackTrace();
 	}
+response.sendRedirect("list.jsp");
 %>
 
 </body>
