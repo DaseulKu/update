@@ -171,13 +171,13 @@ public class EmpData implements DBOperations {
 		String job = scanner.nextLine();
 		System.out.print("사수번호: ");
 		int mgr = Integer.parseInt(scanner.nextLine());
-		System.out.print("입사일 yyyy-mm-dd: ");
+		System.out.print("입사년도 yyyy-mm-dd: ");
 		String hiredate = scanner.nextLine();
-		System.out.print("월급: ");
+		System.out.print("사원급여: ");
 		double sal = Double.parseDouble(scanner.nextLine());
 		System.out.print("성과금: ");
 		double comm = Double.parseDouble(scanner.nextLine());
-		System.out.print("부서번호: ");
+		System.out.print("부번호: ");
 		int deptno = Integer.parseInt(scanner.nextLine());
 
 		try (Statement stmt = connection.createStatement()) {
@@ -208,7 +208,7 @@ public class EmpData implements DBOperations {
 					System.out.println(updatempno + " 사원의 수정할 정보를 입력하세요");
 				}
 			}
-			System.out.print("월급: ");
+			System.out.print("사원급여: ");
 			double sal = Double.parseDouble(scanner.nextLine());
 			System.out.print("성과금: ");
 			double comm = Double.parseDouble(scanner.nextLine());

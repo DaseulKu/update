@@ -55,7 +55,7 @@ public class EmpSwing1 extends JFrame {
 		JLabel lb3 = new JLabel("사원직무");
 		JLabel lb4 = new JLabel("사수번호");
 		JLabel lb5 = new JLabel("입사년도");
-		JLabel lb6 = new JLabel("월급");
+		JLabel lb6 = new JLabel("사원급여");
 		JLabel lb7 = new JLabel("상여금");
 		JLabel lb8 = new JLabel("부서번호");
 

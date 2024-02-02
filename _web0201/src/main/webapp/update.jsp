@@ -27,6 +27,5 @@ if(result>=1){
 	out.println("수정성공!");
 }%>
 <button onclick="location.href='select.jsp' ">사원목록</button>
-</table>
 </body>
 </html>
