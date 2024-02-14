@@ -51,6 +51,7 @@ try (
 </form>
 <button onclick="insert()">입력</button>
 <button onclick="update()">수정</button>
+<button onclick="clean()">초기화</button>
 <table>
     <tr>
         <th>번호</th><th>이름</th>
@@ -97,6 +98,11 @@ function insert(){
 function update(){
 	document.getElementById('frm').action='update.jsp';
 	document.getElementById('frm').submit();
+}
+function clean() {
+	var el = document.getElementById('frm');
+	for(var i=0; i<el.length; i++){
+		el[i].value = '';
 }
 </script>
 </body>
