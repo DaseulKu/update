@@ -5,17 +5,13 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import dto.Board;
 
 public class BoardDao {
 	private static Connection conn;
 	private static BoardDao dao = new BoardDao();
-
-	private BoardDao() {
-	}
+	private BoardDao() {}
 
 	public static BoardDao getInstance() {
 		BoardDao.getConnection();
@@ -41,7 +37,7 @@ public class BoardDao {
 
 			while (rs.next()) {
 				Board board = new Board(rs.getInt("num"), rs.getString("writer"), rs.getString("title"),
-						rs.getString("content"), rs.getString("regtime"), rs.getInt("hits"));
+										rs.getString("content"), rs.getString("regtime"), rs.getInt("hits"));
 				list.add(board);
 			}
 		} catch (SQLException e) {
@@ -61,11 +57,8 @@ public class BoardDao {
 
 			if (rs.next()) {
 				board = new Board(rs.getInt("num"),rs.getString("writer"), rs.getString("title"),
-						rs.getString("content"), rs.getString("regtime"), rs.getInt("hits"));
-
-//				board.setTitle(board.getTitle().replace(" ", "&nbsp;"));
-//              board.setContent(board.getContent().replace(" ", "&nbsp;").replace("\n", "<br>"));
-//				
+								  rs.getString("content"), rs.getString("regtime"), rs.getInt("hits"));
+			
 //				pstmt.executeUpdate("update board set hits=hits+1 where num=" + num);
 			}
 			if (inc) {
@@ -78,29 +71,28 @@ public class BoardDao {
 	}
 	
 	public int delete(int num) {
-		String sql = "delete from board where num = ?";
-		try {
-			PreparedStatement pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, num);
-			pstmt.executeUpdate();
+		try (
+			PreparedStatement pstmt = conn.prepareStatement("delete from board where num="+num);			
+			){
+			return pstmt.executeUpdate();
 			
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
-		return 0;
-				
+		return 0;			
 	}
 	
 	public int insert(Board board) {
-		String sql = "insert into board writer, title, content, regtime, hits values(?,?,?,?,0)";
-		String curTime = LocalDate.now() + " " + LocalTime.now().toString().substring(0, 8);
-		try {
+		String sql = "insert into board (writer, title, content, regtime, hits) values(?,?,?,now(),0)";
+//		String curTime = LocalDate.now() + " " + LocalTime.now().toString().substring(0, 8);
+		try (
 			PreparedStatement pstmt = conn.prepareStatement(sql);
+		){
 			pstmt.setString(1, board.getWriter());
 			pstmt.setString(2, board.getTitle());
 			pstmt.setString(3, board.getContent());
-			pstmt.setString(4, curTime);
-			pstmt.executeUpdate();
+//			pstmt.setString(4, curTime);
+			return pstmt.executeUpdate();
 		} catch (SQLException e) {			
 			e.printStackTrace();
 		}
@@ -108,21 +100,20 @@ public class BoardDao {
 	}
 	
 	public int update(Board board) {
-		
+		String sql = "update board set writer=?, title=?, content=?, regtime=now() where num=?";
+//		String curTime = LocalDate.now() + " " + LocalTime.now().toString().substring(0, 8);
+		try (
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+		){
+			pstmt.setString(1, board.getWriter());
+			pstmt.setString(2, board.getTitle());
+			pstmt.setString(3, board.getContent());
+//			pstmt.setString(4, curTime);
+			pstmt.setInt(4, board.getNum());
+			return pstmt.executeUpdate();
+		} catch (SQLException e) {			
+			e.printStackTrace();
+		}
 		return 0;		
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
