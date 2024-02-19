@@ -1,5 +1,18 @@
+<%@page import="m_dao.MemberDao"%>
+<%@page import="m_dto.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+String id = request.getParameter("id");
+String email = request.getParameter("pw");
+Member member = MemberDao.getInstance().selectForLogin(id, email);
+
+if (member != null) {
+	session.setAttribute("member",member);
+	response.sendRedirect("login_main.jsp");
+	return;
+}
+%>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head><script src="assets/js/color-modes.js"></script>
@@ -9,15 +22,11 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.115.4">
-    <title>Signin Template · Bootstrap v5.3</title>
+    <title>SignIn Template · Bootstrap v5.3</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
-
-    
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-
-<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="canonical"	href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
+    <link rel="stylesheet"	href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+	<link rel="stylesheet"	href="assets/dist/css/bootstrap.min.css" >
 
     <style>
       .bd-placeholder-img {
@@ -148,7 +157,6 @@
         </li>
       </ul>
     </div>
-
     
 <main class="form-signin w-100 m-auto">
   <form>
@@ -156,11 +164,11 @@
     <h1 class="h3 mb-3 fw-normal">로그인</h1>
 
     <div class="form-floating">
-      <input type="text" class="form-control" id="floatingInput" placeholder="아이디">
+      <input type="text" name="id" class="form-control" id="floatingInput" placeholder="아이디">
       <label for="floatingInput">아이디</label>
     </div>
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingPassword" placeholder="이메일">
+      <input type="email" name="pw" class="form-control" id="floatingPassword" placeholder="이메일">
       <label for="floatingPassword">이메일</label>
     </div>
 

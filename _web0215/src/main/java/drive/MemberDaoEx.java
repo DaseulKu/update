@@ -1,7 +1,7 @@
 package drive;
 
-import member_dao.MemberDao;
-import member_dto.Member;
+import m_dao.MemberDao;
+import m_dto.Member;
 
 public class MemberDaoEx {
 

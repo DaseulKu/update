@@ -1,4 +1,4 @@
-package member_dto;
+package m_dto;
 
 public class Member {
 	private String id;
