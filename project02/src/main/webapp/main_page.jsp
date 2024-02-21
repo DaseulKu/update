@@ -25,7 +25,7 @@
         <ul class="util">
             <li><a href="#">Contect</a></li>
             <li><a href="#">Help</a></li>
-            <li><a href="login.jsp">Login</a></li>
+            <li><a href="loginForm.jsp">Login</a></li>
             <li><a href="member_join_form.jsp">Join</a></li>
             <li><a href="#">Sitemap</a></li>
         </ul>
