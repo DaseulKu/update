@@ -22,7 +22,7 @@ if (member != null) {
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.115.4">
-    <title>SignIn Template · Bootstrap v5.3</title>
+    <title>SignIn</title>
 
     <link rel="canonical"	href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
     <link rel="stylesheet"	href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
@@ -161,25 +161,24 @@ if (member != null) {
 <main class="form-signin w-100 m-auto">
   <form>
     <img class="mb-4" src="assets/brand/door-open.svg" alt="" width="72" height="57">
-    <h1 class="h3 mb-3 fw-normal">로그인</h1>
+    <h1 class="h3 mb-3 fw-normal">SignIn</h1>
 
     <div class="form-floating">
-      <input type="text" name="id" class="form-control" id="floatingInput" placeholder="아이디">
-      <label for="floatingInput">아이디</label>
+      <input type="text" name="id" class="form-control" id="floatingInput" placeholder="Id">
+      <label for="floatingInput">Id</label>
     </div>
     <div class="form-floating">
-      <input type="email" name="pw" class="form-control" id="floatingPassword" placeholder="이메일">
-      <label for="floatingPassword">이메일</label>
+      <input type="email" name="pw" class="form-control" id="floatingPassword" placeholder="Email">
+      <label for="floatingPassword">Email</label>
     </div>
 
     <div class="form-check text-start my-3">
       <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
       <label class="form-check-label" for="flexCheckDefault">
-        아이디 기억하기
+        remember-me
       </label>
     </div>
-    <button class="btn btn-primary w-100 py-2" type="submit">로그인</button>
-    <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p>
+    <button class="btn btn-outline-primary w-100 py-2" type="submit">Login</button>
   </form>
 </main>
 <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
