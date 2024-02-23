@@ -5,8 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>기업형 웹 페이지</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Web Page Project</title>
     <script src="https://kit.fontaswesome.com/c47106c6a7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
     <script defer src="assets/js/ie.js"></script>
@@ -27,7 +26,7 @@
             <li><a href="#">Help</a></li>
             <li><a href="loginForm.jsp">Login</a></li>
             <li><a href="member_join_form.jsp">Join</a></li>
-            <li><a href="#">Sitemap</a></li>
+            <li><a href="list.jsp">Admin</a></li>
         </ul>
     </div>
 </header>

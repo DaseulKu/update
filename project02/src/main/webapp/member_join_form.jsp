@@ -44,12 +44,12 @@
 				<form class="d-flex" role="search">
 					<input class="form-control me-2" type="search" placeholder="Search"
 						aria-label="Search">
-					<button class="btn btn-outline-primary" type="submit">Search</button>
+					<button class="btn btn-outline-secondary" type="submit">Search</button>
 				</form>
 			</div>
 		</div>
 	</nav>
-	<form action="member_join.jsp" method="post">
+	<form action="join.do" method="post">
 		<div class="container" style="padding-top: 50px;">
 			<div class="mb-3">
 				<label for="exampleFormControlInput1" class="form-label">User Id</label>
@@ -60,8 +60,8 @@
 				<input type="text" name="name" class="form-control" placeholder="UserName" aria-label="Username" aria-describedby="basic-addon1">
 			</div>
 			<div class="d-grid gap-2 d-md-flex justify-content-md-start">
-				<button type="reset" class="btn btn-outline-primary">Reset</button>
-				<button type="submit" class="btn btn-outline-primary">Submit</button>
+				<button type="reset" class="btn btn-outline-secondary">Reset</button>
+				<button type="submit" class="btn btn-outline-secondary">Submit</button>
 			</div>
 		</div>
 	</form>
@@ -70,5 +70,6 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
 		crossorigin="anonymous"></script>
+
 </body>
 </html>

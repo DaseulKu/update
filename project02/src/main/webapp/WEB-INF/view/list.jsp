@@ -1,5 +1,5 @@
-<%@page import="m_dao.MemberDao"%>
-<%@page import="m_dto.Member"%>
+<%@page import="dao.MemberDao"%>
+<%@page import="dto.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -10,23 +10,26 @@ if (member == null) {
 }
 %>
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>List</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  </head>
-  <body>
- <div class="container" style="padding-top: 50px;">
-<table class="table table-bordered table-hover">
-    <tr>
-        <th class="num"    >번호    </th>
-        <th class="title"  >제목    </th>
-        <th class="writer" >작성자  </th>
-        <th class="regtime">작성일시</th>
-        <th                >조회수  </th>
-    </tr>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>List</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" 
+    	  rel="stylesheet"
+		  integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+		  crossorigin="anonymous">
+</head>
+<body>
+	<div class="container" style="padding-top: 50px;">
+		<table class="table table-bordered table-hover">
+    		<tr>
+       			<th class="num"    >번호    </th>
+        		<th class="title"  >제목    </th>
+      		  	<th class="writer" >작성자  </th>
+        		<th class="regtime">작성일시</th>
+        		<th                >조회수  </th>
+    		</tr>
 <c:forEach var="board" items="${list}">      
         <tr>
             <td>${board.num}</td>

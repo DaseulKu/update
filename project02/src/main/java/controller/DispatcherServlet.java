@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import dao.BoardDao;
-import m_dao.MemberDao;
+import dao.MemberDao;
 import dto.Board;
-import m_dto.Member;
+import dto.Member;
 
 /**
  * Servlet implementation class DispatcherServlet
@@ -87,10 +87,24 @@ public class DispatcherServlet extends HttpServlet {
 			} else {
 				response.sendRedirect("loginForm.jsp");
 			}
+			
 		} else if (path.equals("/logout.do")) {
 			HttpSession session = request.getSession(false);
 			session.invalidate();
-			response.sendRedirect("loginForm.jsp");		
+			response.sendRedirect("loginForm.jsp");	
+			
+		} else if (path.equals("/join.do")) {
+			String id = request.getParameter("id");
+			Member member1 = MemberDao.getInstance().select(id);
+			if (member1 != null && member1.getId().equals(id)) {
+				response.sendRedirect("member_join_form.jsp");
+			}else if (member1 == null) {
+				Member member = new Member(request.getParameter("id"), request.getParameter("email"), request.getParameter("name"));
+				MemberDao.getInstance().insert(member);
+				HttpSession session = request.getSession();
+				session.setAttribute("member", member);
+				response.sendRedirect("loginForm.jsp");
+			}
 		}
 	}
 }
