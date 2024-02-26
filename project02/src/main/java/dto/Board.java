@@ -1,7 +1,7 @@
 package dto;
 
 public class Board {
-	private int num;
+	private int memberno;
 	private String writer;
 	private String title;
 	private String content;
@@ -11,16 +11,10 @@ public class Board {
 	public Board() {}
 	
 	public Board(String writer, String title, String content) {
-		this(0,writer,title,content,"",0); 
-		//this.writer = writer;
-		//this.title = title;
-		//this.content = content;		
+		this(0,writer,title,content,"",0);
 	}
-	public Board(int num, String writer, String title, String content) {
-		this(num,writer,title,content,"",0);
-	}
-	public Board(int num, String writer, String title, String content, String regtime, int hits) {
-		this.num = num;
+	public Board(int memberno, String writer, String title, String content, String regtime, int hits) {
+		this.memberno = memberno;
 		this.writer = writer;
 		this.title = title;
 		this.content = content;
@@ -28,12 +22,12 @@ public class Board {
 		this.hits = hits;
 	}
 
-	public int getNum() {
-		return num;
+	public int getMemberno() {
+		return memberno;
 	}
 
-	public void setNum(int num) {
-		this.num = num;
+	public void setMemberno(int Memberno) {
+		this.memberno = Memberno;
 	}
 
 	public String getWriter() {
@@ -78,7 +72,7 @@ public class Board {
 
 	@Override
 	public String toString() {
-		return "Board [num=" + num + ", writer=" + writer + ", title=" + title + ", content=" + content + ", regtime="
+		return "Board [Memberno=" + memberno + ", writer=" + writer + ", title=" + title + ", content=" + content + ", regtime="
 				+ regtime + ", hits=" + hits + "]";
 	}
 	

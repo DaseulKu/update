@@ -1,6 +1,7 @@
 package dto;
 
 public class Member {
+	//private String memberno;
 	private String id;
 	private String email;
 	private String name;
@@ -38,10 +39,4 @@ public class Member {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	@Override
-	public String toString() {
-		return "Member [id=" + id + ", email=" + email + ", name=" + name + "]";
-	}
-
 }

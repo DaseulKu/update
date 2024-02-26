@@ -1,5 +1,5 @@
-<%@page import="m_dto.Member"%>
-<%@page import="m_dao.MemberDao"%>
+<%@page import="dto.Member"%>
+<%@page import="dao.MemberDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
@@ -16,7 +16,7 @@
 	Member member3 = (Member)session.getAttribute("member");
 	Member member = MemberDao.getInstance().select(member3.getId());
 	%>
-	<form action="member_update.jsp" method="post">
+	<form action="memberUpdate.jsp" method="post">
 		<table>
 			<tr>
 				<td>아이디</td>

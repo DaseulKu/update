@@ -83,7 +83,7 @@ public class DispatcherServlet extends HttpServlet {
 			if (member != null) {
 				HttpSession session = request.getSession();
 				session.setAttribute("member", member);
-				response.sendRedirect("login_main.jsp");
+				response.sendRedirect("loginMain.jsp");
 			} else {
 				response.sendRedirect("loginForm.jsp");
 			}
@@ -97,7 +97,7 @@ public class DispatcherServlet extends HttpServlet {
 			String id = request.getParameter("id");
 			Member member1 = MemberDao.getInstance().select(id);
 			if (member1 != null && member1.getId().equals(id)) {
-				response.sendRedirect("member_join_form.jsp");
+				response.sendRedirect("memberJoinForm.jsp");
 			}else if (member1 == null) {
 				Member member = new Member(request.getParameter("id"), request.getParameter("email"), request.getParameter("name"));
 				MemberDao.getInstance().insert(member);

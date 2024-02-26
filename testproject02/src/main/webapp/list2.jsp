@@ -61,7 +61,7 @@ ResultSet rs = pstmt.executeQuery();
 	</nav>
 
 	<div class="container" style="padding-top: 50px">
-		<table class="table table-bordered table-hover">
+		<table class="table table-bordered table-hover" id="myTable">
 			<thead>
 				<tr>
 					<th scope="col">회원번호</th>
@@ -73,7 +73,27 @@ ResultSet rs = pstmt.executeQuery();
 				</tr>
 			</thead>
 			<tbody>
-				<%
+
+			</tbody>
+		</table>
+		<button class="btn btn-primary" onClick="move()">회원가입</button>
+	</div>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+		crossorigin="anonymous"></script>
+
+	<script>
+		function move() {
+			location.href="memberForm.jsp";
+		}
+		function addRow(conent) {
+			let table = document.getElementById("myTable");
+			table.innerHTML = conent;
+		}
+		window.onload = function() {
+			let data = `<%
 				while (rs.next()) {
 				%>
 				<tr>
@@ -92,25 +112,9 @@ ResultSet rs = pstmt.executeQuery();
 					    "memberDelete.jsp?memberno=<%=rs.getString("memberno")%>"'>삭제</button>
 					</td>
 				</tr>
-				<%
-				}
-				%>
-			</tbody>
-		</table>
-		<button class="btn btn-primary" onClick="move()">회원가입</button>
-	</div>
-
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-		crossorigin="anonymous"></script>
-
-	<script>
-		function move() {
-			//alert("나온다");
-			location.href="memberForm.jsp";
+				<%}%>`;
+			addRow(data);
 		}
-		
 	</script>
 </body>
 </html>

@@ -36,7 +36,6 @@
 			<div class="d-grid gap-2 justify-content: flex-start mx-auto col-6 mx-auto">
 				<button type="submit" class="btn btn-outline-secondary" onclick="location.href='logout.do'">Logout</button>
 				<button type="button" class="btn btn-outline-secondary" onclick="location.href='member_update_form.jsp'">Update</button>
-				<button type="button" class="btn btn-outline-secondary" onclick="location.href='list.do'">List</button>
 			</div>
 		</div>
 	</form>

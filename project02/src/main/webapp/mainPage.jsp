@@ -25,7 +25,7 @@
             <li><a href="#">Contect</a></li>
             <li><a href="#">Help</a></li>
             <li><a href="loginForm.jsp">Login</a></li>
-            <li><a href="member_join_form.jsp">Join</a></li>
+            <li><a href="memberJoinForm.jsp">Join</a></li>
             <li><a href="list.jsp">Admin</a></li>
         </ul>
     </div>

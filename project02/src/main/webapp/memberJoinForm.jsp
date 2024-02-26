@@ -7,11 +7,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Join</title>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
-	crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+	  rel="stylesheet"
+	  integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+	  crossorigin="anonymous">
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -26,7 +25,7 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
-						href="main_page.jsp" aria-current="page">Home</a></li>
+						href="mainPage.jsp" aria-current="page">Home</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" role="button"
@@ -49,25 +48,25 @@
 			</div>
 		</div>
 	</nav>
-	<form action="join.do" method="post">
 		<div class="container" style="padding-top: 50px;">
+		<form action="join.do" method="post">
 			<div class="mb-3">
-				<label for="exampleFormControlInput1" class="form-label">User Id</label>
-				<input type="text" name="id" class="form-control" placeholder="UserId" aria-label="UserId" aria-describedby="basic-addon1">
+				<label for="idInput" class="form-label">User Id</label>
+				<input type="text" name="id" class="form-control" id="idInput" placeholder="UserId" aria-label="UserId" aria-describedby="basic-addon1">
 				<label for="exampleFormControlInput1" class="form-label">Email address</label>
 				<input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="@example.com">
-				<label for="exampleFormControlInput1" class="form-label">User Name</label>
-				<input type="text" name="name" class="form-control" placeholder="UserName" aria-label="Username" aria-describedby="basic-addon1">
+				<label for="nameInput" class="form-label">User Name</label>
+				<input type="text" name="name" class="form-control" id="nameInput" placeholder="UserName" aria-label="Username" aria-describedby="basic-addon1">
 			</div>
 			<div class="d-grid gap-2 d-md-flex justify-content-md-start">
 				<button type="reset" class="btn btn-outline-secondary">Reset</button>
 				<button type="submit" class="btn btn-outline-secondary">Submit</button>
 			</div>
+		</form>
 		</div>
-	</form>
+	
 
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
 		crossorigin="anonymous"></script>
 

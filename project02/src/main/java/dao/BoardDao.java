@@ -29,14 +29,14 @@ public class BoardDao {
 
 	public ArrayList<Board> selectList() {
 		ArrayList<Board> list = new ArrayList<Board>();
-		String sql = "select * from board order by num desc";
+		String sql = "select * from board order by memberno desc";
 		PreparedStatement pstmt;
 		try {
 			pstmt = conn.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
 
 			while (rs.next()) {
-				Board board = new Board(rs.getInt("num"), rs.getString("writer"), rs.getString("title"),
+				Board board = new Board(rs.getInt("memberno"), rs.getString("writer"), rs.getString("title"),
 										rs.getString("content"), rs.getString("regtime"), rs.getInt("hits"));
 				list.add(board);
 			}
@@ -46,23 +46,22 @@ public class BoardDao {
 		return list;
 	}
 
-	public Board selectOne(int num, boolean inc) {
+	public Board selectOne(int memberno, boolean inc) {
 		Board board = null;
-		String sql = "select * from board where num = ?";
+		String sql = "select * from board where memberno = ?";
 		PreparedStatement pstmt;
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, num);
+			pstmt.setInt(1, memberno);
 			ResultSet rs = pstmt.executeQuery();
 
 			if (rs.next()) {
-				board = new Board(rs.getInt("num"),rs.getString("writer"), rs.getString("title"),
+				board = new Board(rs.getInt("memberno"),rs.getString("writer"), rs.getString("title"),
 								  rs.getString("content"), rs.getString("regtime"), rs.getInt("hits"));
 			
-//				pstmt.executeUpdate("update board set hits=hits+1 where num=" + num);
 			}
 			if (inc) {
-				pstmt.executeUpdate("update board set hits=hits+1 where num=" + num);
+				pstmt.executeUpdate("update board set hits=hits+1 where memberno=" + memberno);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -70,9 +69,9 @@ public class BoardDao {
 		return board;
 	}
 	
-	public int delete(int num) {
+	public int delete(int memberno) {
 		try (
-			PreparedStatement pstmt = conn.prepareStatement("delete from board where num="+num);			
+			PreparedStatement pstmt = conn.prepareStatement("delete from board where memberno="+memberno);			
 			){
 			return pstmt.executeUpdate();
 			
@@ -100,7 +99,7 @@ public class BoardDao {
 	}
 	
 	public int update(Board board) {
-		String sql = "update board set writer=?, title=?, content=?, regtime=now() where num=?";
+		String sql = "update board set writer=?, title=?, content=?, regtime=now() where memberno=?";
 //		String curTime = LocalDate.now() + " " + LocalTime.now().toString().substring(0, 8);
 		try (
 			PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -109,7 +108,7 @@ public class BoardDao {
 			pstmt.setString(2, board.getTitle());
 			pstmt.setString(3, board.getContent());
 //			pstmt.setString(4, curTime);
-			pstmt.setInt(4, board.getNum());
+			pstmt.setInt(4, board.getMemberno());
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {			
 			e.printStackTrace();
