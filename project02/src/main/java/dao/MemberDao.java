@@ -20,8 +20,8 @@ public class MemberDao {
 
 	private static void getConnection() {
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/project1", "root", "mysql");
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "scott", "tiger");
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
@@ -65,7 +65,7 @@ public class MemberDao {
 	}
 	
 	public int insert(Member member) {
-		String sql = "insert into member (id, email, name) values(?,?,?)";
+		String sql = "insert into member (memberno, id, email, name) values(seq_member.nextval,?,?,?)";
 		try (
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 		){

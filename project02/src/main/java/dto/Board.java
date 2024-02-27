@@ -1,41 +1,33 @@
 package dto;
 
 public class Board {
-	private int memberno;
-	private String writer;
+	private int num;
 	private String title;
 	private String content;
 	private String regtime;
 	private int hits;
+	private int memberno;
 	
 	public Board() {}
 	
-	public Board(String writer, String title, String content) {
-		this(0,writer,title,content,"",0);
+	public Board(int num, String title, String content) {
+		this(0,title,content,"",0,0);
 	}
-	public Board(int memberno, String writer, String title, String content, String regtime, int hits) {
-		this.memberno = memberno;
-		this.writer = writer;
+	public Board(int num, String title, String content, String regtime, int hits, int memberno) {
+		this.num = num;
 		this.title = title;
 		this.content = content;
 		this.regtime = regtime;
 		this.hits = hits;
+		this.memberno = memberno;
 	}
 
-	public int getMemberno() {
-		return memberno;
+	public int getNum() {
+		return num;
 	}
 
-	public void setMemberno(int Memberno) {
-		this.memberno = Memberno;
-	}
-
-	public String getWriter() {
-		return writer;
-	}
-
-	public void setWriter(String writer) {
-		this.writer = writer;
+	public void setNum(int num) {
+		this.num = num;
 	}
 
 	public String getTitle() {
@@ -69,11 +61,15 @@ public class Board {
 	public void setHits(int hits) {
 		this.hits = hits;
 	}
-
+	public int getMemberno() {
+		return memberno;
+	}
+	public void setMemberno(int Memberno) {
+		this.memberno = Memberno;
+	}
 	@Override
 	public String toString() {
-		return "Board [Memberno=" + memberno + ", writer=" + writer + ", title=" + title + ", content=" + content + ", regtime="
-				+ regtime + ", hits=" + hits + "]";
+		return "Board [num=" + num + ", title=" + title + ", content=" + content + ", regtime="
+				+ regtime + ", hits=" + hits + ", memberno=" + memberno + "]";
 	}
-	
 }

@@ -50,15 +50,15 @@ public class DispatcherServlet extends HttpServlet {
 
 	private void process(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 		String uri = request.getRequestURI();
 		String path = uri.substring(uri.lastIndexOf("/"));
-		if (path.equals("/list.do")) {
+		
+		if (path.equals("/blist.do")) {
 			BoardDao dao = BoardDao.getInstance();
-			ArrayList<Board> list = dao.selectList();
+			ArrayList<Board> blist = dao.selectList();
 
-			request.setAttribute("list", list);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/view/list.jsp");
+			request.setAttribute("blist", blist);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("boardList.jsp");
 			dispatcher.forward(request, response);
 
 		} else if (path.equals("/view.do")) {
@@ -73,7 +73,7 @@ public class DispatcherServlet extends HttpServlet {
 			board.setContent(content);
 
 			request.setAttribute("board", board);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/view/view.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("view.jsp");
 			dispatcher.forward(request, response);
 
 		} else if (path.equals("/login.do")) {

@@ -15,18 +15,16 @@
     <div class="inner">
         <h1><a href="#">DCODLAB</a></h1>
         <ul id="gub">
-            <li><a href="#">DEPARTMENT</a></li>
             <li><a href="#">GALLERY</a></li>
             <li><a href="#">YOUTUBE</a></li>
-            <li><a href="#">COMMUNITY</a></li>
+            <li><a href="blist.do">커뮤니티</a></li>
             <li><a href="#">LOCATION</a></li>
         </ul>
-        <ul class="util">
-            <li><a href="#">Contect</a></li>
-            <li><a href="#">Help</a></li>
-            <li><a href="loginForm.jsp">Login</a></li>
-            <li><a href="memberJoinForm.jsp">Join</a></li>
-            <li><a href="list.jsp">Admin</a></li>
+        <ul class="util">          
+            <li><a href="loginForm.jsp">로그인</a></li>
+            <li><a href="memberJoinForm.jsp">회원가입</a></li>
+            <li><a href="#">고객센터</a></li>
+            <li><a href="MemberList.jsp">관리자</a></li>
         </ul>
     </div>
 </header>

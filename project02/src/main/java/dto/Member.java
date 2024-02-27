@@ -1,21 +1,30 @@
 package dto;
 
 public class Member {
-	//private String memberno;
+	private int memberno;
 	private String id;
 	private String email;
 	private String name;
 
 	public Member(String id, String email, String name) {
+		this(0,id,email,name);
+	}
+
+	public Member(int memberno, String id, String email, String name) {
+		this.memberno = memberno;
 		this.id = id;
 		this.email = email;
 		this.name = name;
 	}
 
-	public Member(String id, String email) {
-		this(id, email,"");
+	public int getMemberno() {
+		return memberno;
 	}
-	
+
+	public void setMemberno(int memberno) {
+		this.memberno = memberno;
+	}
+
 	public String getId() {
 		return id;
 	}
@@ -39,4 +48,5 @@ public class Member {
 	public void setName(String name) {
 		this.name = name;
 	}
+
 }
