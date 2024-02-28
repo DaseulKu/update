@@ -11,6 +11,7 @@ Cookies cookies = new Cookies(request);
 if (!cookies.exists("AUTH")) {
 	response.sendRedirect("loginForm.jsp");
 }
+
 String numU = "";
 String nameU = "";
 String korU = "";
@@ -19,7 +20,8 @@ String mathU = "";
 
 try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "scott", "tiger");
 		Statement stmt = conn.createStatement();
-		ResultSet rs = stmt.executeQuery("select * from score where num = " + request.getParameter("num"));) {
+		ResultSet rs = stmt.executeQuery("select * from score where num = " + request.getParameter("num"));
+		) {
 	if (rs.next()) {
 		numU = rs.getString("num");
 		nameU = rs.getString("name");

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%
 String email = "";
 Cookie[] cookies = request.getCookies();
@@ -12,17 +12,17 @@ if(cookies != null) {
 }
 %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
 </head>
 <body>
-	<form action="loginCkSave.jsp">
-		ID			<input type="text" name="id">
-		EMAIL		<input type="email" name="email" value="<%=email %>">
-		remember me <input type="checkbox" checked name="remember">
-					<input type="submit" value="login"> 
+	<form action="cookieSave.jsp">
+		이메일:	<input type="text" name="email" value="<%=email %>"/>
+		기억하기:	<input type="checkbox" checked name="ck" />
+				<input type="submit" value="로그인" />
 	</form>
 </body>
 </html>

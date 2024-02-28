@@ -1,4 +1,4 @@
-package dao;
+package mvjsp.board.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import jdbc.JdbcUtil;
-import model.Member;
+import mvjsp.board.model.Member;
+import mvjsp.jdbc.JdbcUtil;
 
 public class MemberDao {
 	private static MemberDao instance = new MemberDao();
@@ -40,9 +40,12 @@ public class MemberDao {
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			while (rs.next()) {
-				Member member = new Member(rs.getInt("memberno"), rs.getString("id"), rs.getString("email"), rs.getString("name"));
-				list.add(member);			
+			while(rs.next()) {
+				Member member = new Member(rs.getInt("memberno"),
+						rs.getString("id"),
+						rs.getString("email"),
+						rs.getString("name"));
+				list.add(member);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -51,6 +54,11 @@ public class MemberDao {
 			JdbcUtil.close(rs);
 			JdbcUtil.close(pstmt);
 		}
-		return list;		
+		return list;
 	}
 }
+
+
+
+
+

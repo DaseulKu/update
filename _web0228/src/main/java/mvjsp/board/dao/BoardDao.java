@@ -1,11 +1,11 @@
-package dao;
+package mvjsp.board.dao;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import jdbc.JdbcUtil;
+import mvjsp.jdbc.JdbcUtil;
 
 public class BoardDao {
 	private static BoardDao instance = new BoardDao();

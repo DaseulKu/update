@@ -1,4 +1,4 @@
-package model;
+package mvjsp.board.model;
 
 public class Member {
 	int memberno;
