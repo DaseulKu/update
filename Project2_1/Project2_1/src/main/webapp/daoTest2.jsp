@@ -1,5 +1,5 @@
-<%@page import="dao.MemberDao"%>
-<%@page import="connection.ConnectionProvider"%>
+<%@page import="mvjsp.board.dao.MemberDao"%>
+<%@page import="mvjsp.jdbc.connection.ConnectionProvider"%>
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>

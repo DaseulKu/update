@@ -2,7 +2,8 @@
     pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
- <head><script src="assets/js/color-modes.js"></script>
+ <head>
+ <script src="assets/js/color-modes.js"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
@@ -11,7 +12,7 @@
 <title>Signin Template · Bootstrap v5.3</title>
 <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/dist/css/bootstrap.min.css">
 <style>
       .bd-placeholder-img {
         font-size: 1.125rem;

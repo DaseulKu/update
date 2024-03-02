@@ -24,7 +24,7 @@
             <li><a href="loginForm.jsp">로그인</a></li>
             <li><a href="memberJoinForm.jsp">회원가입</a></li>
             <li><a href="#">고객센터</a></li>
-            <li><a href="MemberList.jsp">관리자</a></li>
+            <li><a href="#">관리자</a></li>
         </ul>
     </div>
 </header>

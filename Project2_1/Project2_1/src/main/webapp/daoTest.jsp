@@ -1,6 +1,6 @@
-<%@page import="connection.ConnectionProvider"%>
+<%@page import="mvjsp.board.dao.BoardDao"%>
+<%@page import="mvjsp.jdbc.connection.ConnectionProvider"%>
 <%@page import="java.sql.Connection"%>
-<%@page import="dao.BoardDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%

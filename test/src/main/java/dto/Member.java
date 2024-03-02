@@ -6,6 +6,8 @@ public class Member {
 	private String email;
 	private String name;
 
+	public Member() {}
+	
 	public Member(String id, String email, String name) {
 		this(0,id,email,name);
 	}
